@@ -71,3 +71,5 @@ val.XO['a33']==''):
     else: print("Nenhum valor conhecido")
 
     game()
+print("Changing without merging.")
+print("Changing with merge")

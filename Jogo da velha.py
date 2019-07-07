@@ -1,10 +1,8 @@
-import os
-from time import sleep
-
 class variaveis():
     clear = '\n' * 100
     XO={"a1":"", "b1":"", "c1":"", "a2":"", "b2":"", "c2":"", "a3":"", "b3":"", "c3":""}
     win=0
+    c = 0
 #variaveis
 val=variaveis()
 
@@ -21,9 +19,9 @@ def game():
 #val.XO['c2'] val.XO['a3'] val.XO['b3'] val.XO['c3']
 #print(val.XO['a1'])
 def play():
-    c = 0
     verification = 0
     comeco = 0
+    val.c = 0
     while (val.XO['a1']=='' or val.XO['b1']=='' or val.XO['c1']=='' or val.XO['a2']=='' or
     val.XO['b2']=='' or val.XO['c2']=='' or val.XO['a3']=='' or val.XO['b3']=='' or
     val.XO['c3']==''):
@@ -43,84 +41,84 @@ def play():
         x=str(input("Insira a posição que você deseja inserir"))
 
         print('\n'*100)
-        a=c
+        a = val.c
         if x.lower().strip() == 'a1' or x.lower().strip() =='1a':
             if val.XO['a1'] == "":
-                c += 1
-                if c % 2== 0:
+                val.c += 1
+                if val.c % 2 == 0:
                     val.XO['a1'] = 'X'
-                elif c % 2== 1:
+                elif val.c % 2 == 1:
                     val.XO['a1'] = 'O'
 
         elif x.lower().strip() == 'b1' or x.lower().strip() =='1b':
             if val.XO['b1'] == "":
-                c += 1
-                if c % 2== 0:
+                val.c += 1
+                if val.c % 2 == 0:
                     val.XO['b1'] = 'X'
-                elif c % 2== 1:
+                elif val.c % 2 == 1:
                     val.XO['b1'] = 'O'
 
         elif x.lower().strip() == 'c1' or x.lower().strip() =='1c':
             if val.XO['c1'] == "":
-                c += 1
-                if c % 2== 0:
+                val.c += 1
+                if val.c % 2 == 0:
                     val.XO['c1'] = 'X'
-                elif c % 2== 1:
+                elif val.c % 2 == 1:
                     val.XO['c1'] = 'O'
 
         elif x.lower().strip() == 'a2' or x.lower().strip() =='2a':
             if val.XO['a2'] == "":
-                c += 1
-                if c % 2== 0:
+                val.c += 1
+                if val.c % 2 == 0:
                     val.XO['a2'] = 'X'
-                elif c % 2== 1:
+                elif val.c % 2 == 1:
                     val.XO['a2'] = 'O'
 
         elif x.lower().strip() == 'b2' or x.lower().strip() =='2b':
             if val.XO['b2'] == "":
-                c += 1
-                if c % 2== 0:
+                val.c += 1
+                if val.c % 2 == 0:
                     val.XO['b2'] = 'X'
-                elif c % 2== 1:
+                elif val.c % 2 == 1:
                     val.XO['b2'] = 'O'
 
 
         elif x.lower().strip() == 'c2' or x.lower().strip() =='2c':
             if val.XO['c2'] == "":
-                c += 1
-                if c % 2== 0:
+                val.c += 1
+                if val.c % 2 == 0:
                     val.XO['c2'] = 'X'
-                elif c % 2== 1:
+                elif val.c % 2 == 1:
                     val.XO['c2'] = 'O'
 
         elif x.lower().strip() == 'a3' or x.lower().strip() =='3a':
             if val.XO['a3'] == "":
-                c += 1
-                if c % 2== 0:
+                val.c += 1
+                if val.c % 2 == 0:
                     val.XO['a3'] = 'X'
-                elif c % 2== 1:
+                elif val.c % 2 == 1:
                     val.XO['a3'] = 'O'
 
         elif x.lower().strip() == 'b3' or x.lower().strip() =='3b':
             if val.XO['b3'] == "":
-                c += 1
-                if c % 2== 0:
+                val.c += 1
+                if val.c % 2 == 0:
                     val.XO['b3'] = 'X'
-                elif c % 2== 1:
+                elif val.c % 2 == 1:
                     val.XO['b3'] = 'O'
 
         elif x.lower().strip() == 'c3' or x.lower().strip() =='3c':
             if val.XO['c3'] == "":
-                c += 1
-                if c % 2== 0:
+                val.c += 1
+                if val.c % 2 == 0:
                     val.XO['c3'] = 'X'
-                elif c % 2== 1:
+                elif val.c % 2 == 1:
                     val.XO['c3'] = 'O'
 
         else:
             print("Nenhum valor conhecido")
             verification=1
-        if a == c and verification==0:
+        if a == val.c and verification == 0:
             print(val.clear)
             game()
             print(f"Já há valor preenchido na posição {x}")
@@ -184,7 +182,17 @@ def verificationfun():
         winwho = 'O'
         val.win = 1
     return(val.win,winwho)
-play()
-if verificationfun()[0]==0:
-    print("Empatou hihi sifudeu")
 
+
+restart = 's'
+while restart.strip().lower()[0] == 's':
+    play()
+    if verificationfun()[0] == 0:
+        print("Empatou hihi sifudeu")
+    elif verificationfun()[0] == 1 and val.c == 9:
+        print("Parabéns", end=" ")
+        if verificationfun()[1] == "X":
+            print('"X" ganhou')
+        else:
+            print('"O" ganhou')
+    restart = input("Quer jogar de novo? [S/N]")

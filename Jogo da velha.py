@@ -23,51 +23,62 @@ val.XO['a33']==''):
     x=input("Insira a posição que você deseja inserir ")
     c+=1
 
+
+
     if x == 'a11':
-        if c % 2== 0:
-            val.XO['a11'] = 'X'
-        elif c % 2== 1:
-            val.XO['a11'] = 'O'
+        if val.XO['a11'] == "":
+            if c % 2== 0:
+                val.XO['a11'] = 'X'
+            elif c % 2== 1:
+                val.XO['a11'] = 'O'
     elif x == 'a12':
-        if c % 2== 0:
-            val.XO['a12'] = 'X'
-        elif c % 2== 1:
-            val.XO['a12'] = 'O'
+        if val.XO['a12'] == "":
+            if c % 2== 0:
+                val.XO['a12'] = 'X'
+            elif c % 2== 1:
+                val.XO['a12'] = 'O'
     elif x == 'a13':
-        if c % 2== 0:
-            val.XO['a13'] = 'X'
-        elif c % 2== 1:
-            val.XO['a13'] = 'O'
+        if val.XO['a13'] == "":
+            if c % 2== 0:
+                val.XO['a13'] = 'X'
+            elif c % 2== 1:
+                val.XO['a13'] = 'O'
     elif x == 'a21':
-        if c % 2== 0:
-            val.XO['a21'] = 'X'
-        elif c % 2== 1:
-            val.XO['a21'] = 'O'
+        if val.XO['a21'] == "":
+            if c % 2== 0:
+                val.XO['a21'] = 'X'
+            elif c % 2== 1:
+                val.XO['a21'] = 'O'
     elif x == 'a22':
-        if c % 2== 0:
-            val.XO['a22'] = 'X'
-        elif c % 2== 1:
-            val.XO['a22'] = 'O'
+        if val.XO['a22'] == "":
+            if c % 2== 0:
+                val.XO['a22'] = 'X'
+            elif c % 2== 1:
+                val.XO['a22'] = 'O'
     elif x == 'a23':
-        if c % 2== 0:
-            val.XO['a23'] = 'X'
-        elif c % 2== 1:
-            val.XO['a23'] = 'O'
+        if val.XO['a23'] == "":
+            if c % 2== 0:
+                val.XO['a23'] = 'X'
+            elif c % 2== 1:
+                val.XO['a23'] = 'O'
     elif x == 'a31':
-        if c % 2== 0:
-            val.XO['a31'] = 'X'
-        elif c % 2== 1:
-            val.XO['a31'] = 'O'
+        if val.XO['a31'] == "":
+            if c % 2== 0:
+                val.XO['a31'] = 'X'
+            elif c % 2== 1:
+                val.XO['a31'] = 'O'
     elif x == 'a32':
-        if c % 2== 0:
-            val.XO['a32'] = 'X'
-        elif c % 2== 1:
-            val.XO['a32'] = 'O'
+        if val.XO['a32'] == "":
+            if c % 2== 0:
+                val.XO['a32'] = 'X'
+            elif c % 2== 1:
+                val.XO['a32'] = 'O'
     elif x == 'a33':
-        if c % 2== 0:
-            val.XO['a33'] = 'X'
-        elif c % 2== 1:
-            val.XO['a33'] = 'O'
+        if val.XO['a33'] == "":
+            if c % 2== 0:
+                val.XO['a33'] = 'X'
+            elif c % 2== 1:
+                val.XO['a33'] = 'O'
     else: print("Nenhum valor conhecido")
 
     game()

@@ -189,7 +189,6 @@ def verificationfun():
 restart = 's'
 while restart.strip().lower()[0] == 's':
     play()
-    print("Play")
     if verificationfun()[0] == 0:
         print("Empatou hihi sifudeu")
     elif verificationfun()[0] == 1 and val.c == 9:
@@ -198,4 +197,7 @@ while restart.strip().lower()[0] == 's':
             print('"X" ganhou')
         else:
             print('"O" ganhou')
+    val.win = 0
+    val.c = 0
+    val.XO = {"a1": "", "b1": "", "c1": "", "a2": "", "b2": "", "c2": "", "a3": "", "b3": "", "c3": ""}
     restart = input("Quer jogar de novo? [S/N]")

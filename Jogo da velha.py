@@ -71,4 +71,3 @@ val.XO['a33']==''):
     else: print("Nenhum valor conhecido")
 
     game()
-print(teste)

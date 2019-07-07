@@ -26,7 +26,6 @@ def play():
     val.XO['b2']=='' or val.XO['c2']=='' or val.XO['a3']=='' or val.XO['b3']=='' or
     val.XO['c3']==''):
         verificationfun()
-        print(verificationfun()[0])
         if verificationfun()[0]==1:
             print("Parabéns", end=" ")
             if verificationfun()[1]=="X":

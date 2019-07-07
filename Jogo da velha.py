@@ -1,50 +1,48 @@
-class variaveis():
+class variaveis:
     clear = '\n' * 100
-    XO={"a1":"", "b1":"", "c1":"", "a2":"", "b2":"", "c2":"", "a3":"", "b3":"", "c3":""}
-    win=0
+    XO = {"a1": "", "b1": "", "c1": "", "a2": "", "b2": "", "c2": "", "a3": "", "b3": "", "c3": ""}
+    win = 0
     c = 0
-#variaveis
-val=variaveis()
+
+
+# variaveis
+val = variaveis()
 
 
 def game():
-    print('{}'.format('-'*20))
-    print('{:>7}{:>3}{:>2}'.format('A','B','C'))
-    print('1{:>6}{}{:^1}{}{:^1}'.format(val.XO['a1'],'│',val.XO['b1'],'│',val.XO['c1']))
-    print('2{:>6}{}{:^1}{}{:^1}'.format(val.XO['a2'],'│',val.XO['b2'],'│',val.XO['c2']))
-    print('3{:>6}{}{:^1}{}{:^1}'.format(val.XO['a3'],'│',val.XO['b3'],'│',val.XO['c3']))
-    print('{}'.format('-'*20))
+    print('{}'.format('-' * 20))
+    print('{:>7}{:>3}{:>2}'.format('A', 'B', 'C'))
+    print('1{:>6}{}{:^1}{}{:^1}'.format(val.XO['a1'], '│', val.XO['b1'], '│', val.XO['c1']))
+    print('2{:>6}{}{:^1}{}{:^1}'.format(val.XO['a2'], '│', val.XO['b2'], '│', val.XO['c2']))
+    print('3{:>6}{}{:^1}{}{:^1}'.format(val.XO['a3'], '│', val.XO['b3'], '│', val.XO['c3']))
+    print('{}'.format('-' * 20))
 
-#val.XO['a1'] val.XO['b1'] val.XO['c1'] val.XO['a2'] val.XO['b2']
-#val.XO['c2'] val.XO['a3'] val.XO['b3'] val.XO['c3']
-#print(val.XO['a1'])
 def play():
-    verification = 0
     comeco = 0
     val.c = 0
-    while (val.XO['a1']=='' or val.XO['b1']=='' or val.XO['c1']=='' or val.XO['a2']=='' or
-    val.XO['b2']=='' or val.XO['c2']=='' or val.XO['a3']=='' or val.XO['b3']=='' or
-    val.XO['c3']==''):
+    while (val.XO['a1'] == '' or val.XO['b1'] == '' or val.XO['c1'] == '' or val.XO['a2'] == '' or
+           val.XO['b2'] == '' or val.XO['c2'] == '' or val.XO['a3'] == '' or val.XO['b3'] == '' or
+           val.XO['c3'] == ''):
         verificationfun()
-        if verificationfun()[0]==1:
+        if verificationfun()[0] == 1:
             print("Parabéns", end=" ")
-            if verificationfun()[1]=="X":
+            if verificationfun()[1] == "X":
                 print('"X" ganhou')
             else:
                 print('"O" ganhou')
             break
-        verification=0
-        if comeco==0:
+        verification = 0
+        if comeco == 0:
             game()
-            comeco=1
+            comeco = 1
         if val.c % 2 == 0:
             x = str(input('"O" Insira a posição'))
         else:
             x = str(input('"X" Insira a posição'))
 
-        print('\n'*100)
+        print('\n' * 100)
         a = val.c
-        if x.lower().strip() == 'a1' or x.lower().strip() =='1a':
+        if x.lower().strip() == 'a1' or x.lower().strip() == '1a':
             if val.XO['a1'] == "":
                 val.c += 1
                 if val.c % 2 == 0:
@@ -52,7 +50,7 @@ def play():
                 elif val.c % 2 == 1:
                     val.XO['a1'] = 'O'
 
-        elif x.lower().strip() == 'b1' or x.lower().strip() =='1b':
+        elif x.lower().strip() == 'b1' or x.lower().strip() == '1b':
             if val.XO['b1'] == "":
                 val.c += 1
                 if val.c % 2 == 0:
@@ -60,7 +58,7 @@ def play():
                 elif val.c % 2 == 1:
                     val.XO['b1'] = 'O'
 
-        elif x.lower().strip() == 'c1' or x.lower().strip() =='1c':
+        elif x.lower().strip() == 'c1' or x.lower().strip() == '1c':
             if val.XO['c1'] == "":
                 val.c += 1
                 if val.c % 2 == 0:
@@ -68,7 +66,7 @@ def play():
                 elif val.c % 2 == 1:
                     val.XO['c1'] = 'O'
 
-        elif x.lower().strip() == 'a2' or x.lower().strip() =='2a':
+        elif x.lower().strip() == 'a2' or x.lower().strip() == '2a':
             if val.XO['a2'] == "":
                 val.c += 1
                 if val.c % 2 == 0:
@@ -76,7 +74,7 @@ def play():
                 elif val.c % 2 == 1:
                     val.XO['a2'] = 'O'
 
-        elif x.lower().strip() == 'b2' or x.lower().strip() =='2b':
+        elif x.lower().strip() == 'b2' or x.lower().strip() == '2b':
             if val.XO['b2'] == "":
                 val.c += 1
                 if val.c % 2 == 0:
@@ -85,7 +83,7 @@ def play():
                     val.XO['b2'] = 'O'
 
 
-        elif x.lower().strip() == 'c2' or x.lower().strip() =='2c':
+        elif x.lower().strip() == 'c2' or x.lower().strip() == '2c':
             if val.XO['c2'] == "":
                 val.c += 1
                 if val.c % 2 == 0:
@@ -93,7 +91,7 @@ def play():
                 elif val.c % 2 == 1:
                     val.XO['c2'] = 'O'
 
-        elif x.lower().strip() == 'a3' or x.lower().strip() =='3a':
+        elif x.lower().strip() == 'a3' or x.lower().strip() == '3a':
             if val.XO['a3'] == "":
                 val.c += 1
                 if val.c % 2 == 0:
@@ -101,7 +99,7 @@ def play():
                 elif val.c % 2 == 1:
                     val.XO['a3'] = 'O'
 
-        elif x.lower().strip() == 'b3' or x.lower().strip() =='3b':
+        elif x.lower().strip() == 'b3' or x.lower().strip() == '3b':
             if val.XO['b3'] == "":
                 val.c += 1
                 if val.c % 2 == 0:
@@ -109,7 +107,7 @@ def play():
                 elif val.c % 2 == 1:
                     val.XO['b3'] = 'O'
 
-        elif x.lower().strip() == 'c3' or x.lower().strip() =='3c':
+        elif x.lower().strip() == 'c3' or x.lower().strip() == '3c':
             if val.XO['c3'] == "":
                 val.c += 1
                 if val.c % 2 == 0:
@@ -119,63 +117,64 @@ def play():
 
         else:
             print("Nenhum valor conhecido")
-            verification=1
+            verification = 1
         if a == val.c and verification == 0:
             print(val.clear)
             game()
             print(f"Já há valor preenchido na posição {x}")
-        elif verification==1:
+        elif verification == 1:
             game()
             print(f'"{x}"" não existe, insira posição correta')
         else:
             game()
 
+
 def verificationfun():
-    #horizontal win
-    winwho=''
-    if val.XO['a1']=="X" and val.XO['b1']=="X" and val.XO['c1']=="X":
-        winwho='X'
-        val.win=1
-    elif val.XO['a1']=="O" and val.XO['b1']=="O" and val.XO['c1']=="O":
-        winwho='O'
+    # horizontal win
+    winwho = ''
+    if val.XO['a1'] == "X" and val.XO['b1'] == "X" and val.XO['c1'] == "X":
+        winwho = 'X'
         val.win = 1
-    elif val.XO['a2']=="X" and val.XO['b2']=="X" and val.XO['c2']=="X":
-        winwho='X'
+    elif val.XO['a1'] == "O" and val.XO['b1'] == "O" and val.XO['c1'] == "O":
+        winwho = 'O'
         val.win = 1
-    elif val.XO['a2']=="O" and val.XO['b2']=="O" and val.XO['c2']=="O":
-        winwho='O'
+    elif val.XO['a2'] == "X" and val.XO['b2'] == "X" and val.XO['c2'] == "X":
+        winwho = 'X'
+        val.win = 1
+    elif val.XO['a2'] == "O" and val.XO['b2'] == "O" and val.XO['c2'] == "O":
+        winwho = 'O'
         val.win = 1
     elif val.XO['a3'] == "X" and val.XO['b3'] == "X" and val.XO['c3'] == "X":
-        winwho='X'
+        winwho = 'X'
         val.win = 1
     elif val.XO['a3'] == "O" and val.XO['b3'] == "O" and val.XO['c3'] == "O":
-        winwho='O'
+        winwho = 'O'
         val.win = 1
-    #Vertical wins
+    # Vertical wins
     if val.XO['a1'] == "X" and val.XO['a2'] == "X" and val.XO['a3'] == "X":
-        winwho='X'
-        val.win=1
+        winwho = 'X'
+        val.win = 1
     elif val.XO['a1'] == "O" and val.XO['a2'] == "O" and val.XO['a3'] == "O":
-        winwho='O'
-        val.win=1
+        winwho = 'O'
+        val.win = 1
     elif val.XO['b1'] == "X" and val.XO['b2'] == "X" and val.XO['b3'] == "X":
-        winwho='X'
-        val.win=1
+        winwho = 'X'
+        val.win = 1
     elif val.XO['b1'] == "O" and val.XO['b2'] == "O" and val.XO['b3'] == "O":
-        winwho='O'
-        val.win=1
+        winwho = 'O'
+        val.win = 1
     elif val.XO['c1'] == "X" and val.XO['c2'] == "X" and val.XO['c3'] == "X":
-        winwho='X'
-        val.win=1
+        winwho = 'X'
+        val.win = 1
     elif val.XO['c1'] == "O" and val.XO['c2'] == "O" and val.XO['c3'] == "O":
-        winwho='O'
-        val.win=1
-    #Diagonals Wins
+        winwho = 'O'
+        val.win = 1
+    # Diagonals Wins
     elif val.XO['c1'] == "X" and val.XO['b2'] == "X" and val.XO['a3'] == "X":
-        winwho='X'
-        val.win=1
+        winwho = 'X'
+        val.win = 1
     elif val.XO['c1'] == "O" and val.XO['b2'] == "O" and val.XO['a3'] == "O":
-        winwho='O'
+        winwho = 'O'
         val.win = 1
     elif val.XO['a1'] == "X" and val.XO['b2'] == "X" and val.XO['c3'] == "X":
         winwho = 'X'
@@ -183,7 +182,7 @@ def verificationfun():
     elif val.XO['a1'] == "O" and val.XO['b2'] == "O" and val.XO['c3'] == "O":
         winwho = 'O'
         val.win = 1
-    return(val.win,winwho)
+    return val.win, winwho
 
 
 restart = 's'

@@ -37,7 +37,10 @@ def play():
         if comeco==0:
             game()
             comeco=1
-        x=str(input("Insira a posição que você deseja inserir"))
+        if val.c % 2 == 0:
+            x = str(input('"O" Insira a posição'))
+        else:
+            x = str(input('"X" Insira a posição'))
 
         print('\n'*100)
         a = val.c
@@ -186,6 +189,7 @@ def verificationfun():
 restart = 's'
 while restart.strip().lower()[0] == 's':
     play()
+    print("Play")
     if verificationfun()[0] == 0:
         print("Empatou hihi sifudeu")
     elif verificationfun()[0] == 1 and val.c == 9:
